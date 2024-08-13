@@ -26,7 +26,7 @@ int main(){
     printf("Endereço de pont1: ");
     printf("%p\n", &pont1);
 
-    // Podemos observar que qualquer alteração ao valor de num1 não acarreta nenhuma mudança a seu endereço.
+    // Podemos observar que qualquer alteração ao valor de num1 não ocasiona nenhuma mudança a seu endereço.
     num1 = 50;
     printf("\nConsiderando agora num1 = 50 e *pont1 = &num1\n");
     printf("\nValor de num1: ");
