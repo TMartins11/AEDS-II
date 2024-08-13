@@ -20,7 +20,7 @@ int main(){
     printf("%p\n", pont2);
     printf("---------------\n");
     
-    //como pont1 faz referência ao endereço de num1, se apontarmos a pont1, ele exibirá o valor do endereço em nele apresentado, ou seja, num1.
+    //como pont1 faz referência ao endereço de num1, se apontarmos a pont1, ele exibirá o valor do endereço nele apresentado, ou seja, num1.
     printf("%d\n", num1);
     printf("%d\n", *pont1);
     printf("---------------\n");
