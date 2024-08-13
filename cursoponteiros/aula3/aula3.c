@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//Passagem de parâmetros: Por Valor X Por Referência - "Uma casa tem mudança de moradores, não de endereço"
+//Passagem de parâmetros: Por valor X Por referência - "Uma casa tem mudança de moradores, não de endereço"
 
 //Passagem de parâmetro por valor, não altera a variável original, utliza outro espaço de memória para armazenar o conteúdo.
 void dobra_v(int n){
