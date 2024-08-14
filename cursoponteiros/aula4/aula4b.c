@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Finalizando a aula 4 com a passagem de parâmetros por referência.
+// Finalizando aula 4 com a passagem de parâmetros por referência.
 
 // Com a passagem de parâmetros por referência, é possível preencher os espaços alocados com malloc por meio de funções. Além de ser viável imprimir os valores.
 void preenche_valores(int *p, int tamanho){
