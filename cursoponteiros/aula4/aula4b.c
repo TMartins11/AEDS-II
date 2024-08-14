@@ -48,7 +48,7 @@ int main(){
     
     printf("----------------------------------\n");
 
-    // É importante notar que também é possível possibilitar que o próprio usuário preencha os espaços alocados dinamicamente.
+    // É importante notar que também é possível que o próprio usuário preencha os espaços alocados dinamicamente.
     insira_valores(pont, num_elementos);
     printf("----------------------------------\n");
     imprime_valores(pont, num_elementos);
