@@ -6,7 +6,7 @@ typedef struct Lista{
     int valor;
 }L;
 
-// Alocação Sequencial - Busca de um elemento na lista L.
+// Alocação Sequencial - Busca de um elemento na lista L - 1º Método
 
 /* A ideia consiste em percorrer o vetor completo em busca do elemento com a chave desejada, iterando sobre o contador i conforme são verificados os números
 ou é encontrado diretamente o algarismo desejado. *Modifiquei para que retornasse -1 caso o número não seja presente no vetor, não divergir com posição 0.*/
@@ -27,7 +27,7 @@ int busca1(int tam, L lista[], int x){
     return busca1;
 }
 
-// Alocação Sequencial - Busca de um elemento na Lista L (2º Método).
+// Alocação Sequencial - Busca de um elemento na Lista L - 2º Método
 
 /* Consiste em adicionar a chave desejada uma posição à frente do limite de casas do vetor, após isso, comparar todas as posições do vetor com essa nova
 que acabou de ser criada, retornando o elemento associado originalmente a ela caso seja encontrada e matendo busca = -1 caso o elemento só exista com nossa

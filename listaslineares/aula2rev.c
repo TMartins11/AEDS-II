@@ -6,39 +6,31 @@ typedef struct Lista{
     int valor;
 }lista;
 
-// Busca em Lista Sequencial - 1.
-
-/*Percorrer o vetor inteiro buscando pela chave correspondente, retornando -1 (posição inexistente), caso o número não esteja no vetor, e o número caso esteja.*/
-
-int busca1(int TAM, lista L[], int x){
+int busca1(int tam, lista L[], int x){
     int busca1 = -1;
     int i = 0;
-                                                            // Complexidade de Espaço: 3 + n; Complexidade de Tempo: 2 + 5 * (TAM)
-    while( i < TAM){
+
+    while(i < tam){
         if(L[i].chave == x){
             busca1 = i;
-            i = TAM + 1;
+            i = tam + 1;
         }else{
             i++;
         }
     }
-
-    return busca1;    
+    
+    return busca1;
 }
 
-// Busca em Lista Sequencial - 2.
-
-/*Inserir a chave desejada uma posição além do vetor, depois comparar os elementos do vetor com esse criado artificalmente, caso seja encontrada igualdade
-dentro dos padrões normais, retorna o número, caso não ocorra, retorna -1, posição inexistente no vetor normal.*/
-int busca2(int TAM, lista L[], int y){
+int busca2(int tam, lista L[], int y){
     int busca2 = -1;
     int i = 0;
-    L[TAM + 1].chave = y;
+    L[tam + 1].chave = y;
 
     while(L[i].chave != y){
         i++;
     }
-    if(i != TAM + 1){
+    if(i != tam + 1){
         busca2 = i;
     }
 
@@ -46,42 +38,40 @@ int busca2(int TAM, lista L[], int y){
 }
 
 int main(){
-    int TAM = 10;
-    lista L[TAM];
+    int tam = 10;
+    lista L[tam];
 
-    // Associando o vetor com as chaves e valores correspondentes.
-    for(int i = 0; i < TAM; i++){
+    for(int i = 0; i < tam; i++){
         L[i].chave = i;
-        L[i].valor = 10  + i + i;
+        L[i].valor = 10 + i + i;
     }
 
     printf("\nVetor Completo: ");
-    for(int i = 0; i < TAM; i++){
+    for(int i = 0; i < tam; i++){
         printf("%d ", L[i].valor);
     }
 
     int x = 0;
-    printf("\nEscolha a chave associada ao número que você deseja encontrar: ");
+    printf("\nInsira a chave do número que você deseja encontrar no vetor: ");
     scanf("%d", &x);
 
-    int num_Encontrado = busca1(TAM, L,x);
+    int num_Encontrado = busca1(tam, L, x);
 
     if(num_Encontrado != -1){
-        printf("\nO número encontrado foi: %d\n", L[num_Encontrado].valor);
+        printf("\nO número correspondente a chave escolhida é: %d\n", L[num_Encontrado].valor);
     }else{
-        printf("\nNão há nenhum número no vetor associado com essa chave!\n");
+        printf("\nNão existe nenhum algarismo com a chave correspondente no vetor!\n");
     }
 
     int y = 0;
-    printf("\nTestando o 2º Algoritmo:\n");
-    printf("\nEscolha a chave associada ao número que você deseja encontrar: ");
+    printf("\nAlgoritmo 2 - Insira a chave do número que você deseja encontrar no vetor: ");
     scanf("%d", &y);
-    int num_Encontrado2 = busca1(TAM, L,y);
+    int num_Encontrado2 = busca2(tam, L, y);
 
-    if(num_Encontrado2 != -1){
-        printf("\nO número encontrado foi: %d\n", L[num_Encontrado2].valor);
+     if(num_Encontrado2 != -1){
+        printf("\nO número correspondente a chave escolhida é: %d\n", L[num_Encontrado2].valor);
     }else{
-        printf("\nNão há nenhum número no vetor associado com essa chave!\n");
+        printf("\nNão existe nenhum algarismo com a chave correspondente no vetor!\n");
     }
 
     return 0;
