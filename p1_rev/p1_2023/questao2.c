@@ -3,39 +3,39 @@
 #include <string.h>
 
 /**
- * O objetivo do programa é manipular uma lista com alocação sequencial
- * cujos valores serão inseridos em ordem crescente.
- * A função de busca binária foi deixada incompleta, e é seu trabalho é completá-la
+ * O objetivo do programa Ã© manipular uma lista com alocaÃ§Ã£o sequencial
+ * cujos valores serÃ£o inseridos em ordem crescente.
+ * A funÃ§Ã£o de busca binÃ¡ria foi deixada incompleta, e Ã© seu trabalho Ã© completÃ¡-la
  * de modo que o programa funcione da maneira esperada.
- * Todas as entradas de dados realizam as inserções já em ordem crescente, de modo
- * que a busca binária possa funcionar sem problemas.
- * Ou seja, você deve assumir que o vetor a ser recebido pela função de busca binária
- * terá sempre os números já previamente ordenados em ordem crescente.
+ * Todas as entradas de dados realizam as inserÃ§Ãµes jÃ¡ em ordem crescente, de modo
+ * que a busca binÃ¡ria possa funcionar sem problemas.
+ * Ou seja, vocÃª deve assumir que o vetor a ser recebido pela funÃ§Ã£o de busca binÃ¡ria
+ * terÃ¡ sempre os nÃºmeros jÃ¡ previamente ordenados em ordem crescente.
  *
- * Importante: ao executar o programa compilado você deve utilizar-se do script executar.sh.
- * Exemplo: supondo que você tenha compilado o código fonte da seguinte forma:
- * gcc QExemplo.c -o QExemplo
+ * Importante: ao executar o programa compilado vocÃª deve utilizar-se do script executar.sh.
+ * Exemplo: supondo que vocÃª tenha compilado o cÃ³digo fonte da seguinte forma:
+ * gcc Q2.c -o Q2
  *
- * Você deve chamar o script da seguinte forma:
- * ./executar.sh QExemplo
+ * VocÃª deve chamar o script da seguinte forma:
+ * ./executar.sh Q2
  *
- * Ou seja, o nome do executável gerado deve ser passado como argumento para o script.
- * Neste caso, QExemplo.
+ * Ou seja, o nome do executÃ¡vel gerado deve ser passado como argumento para o script.
+ * Neste caso, Q2.
  *
- * Dentro do diretório você encontrará diversos casos de teste, nomeados como:
+ * Dentro do diretÃ³rio vocÃª encontrarÃ¡ diversos casos de teste, nomeados como:
  *  - entrada_1.txt
  *  - entrada_2.txt
  *  ...
  *
- * Para cada arquivo de entrada existirá um gabarito correspondente. ou Seja:
+ * Para cada arquivo de entrada existirÃ¡ um gabarito correspondente. ou Seja:
  *  - gabarito_1.txt
  *  - gabarito_2.txt
  *  ...
  *
- *  Você NÃO deve alterar estes arquivos.
+ *  VocÃª NÃƒO deve alterar estes arquivos.
  *
- * Ao executar o script executar.sh ele comparará a saída produzida pelo seu programa com os gabaritos.
- * Você terá o resultado do teste para cada entrada.
+ * Ao executar o script executar.sh ele compararÃ¡ a saÃ­da produzida pelo seu programa com os gabaritos.
+ * VocÃª terÃ¡ o resultado do teste para cada entrada.
  */
 
 typedef struct no_
@@ -45,22 +45,23 @@ typedef struct no_
 } no;
 
 /**
- * Complete a função a seguir, capaz de realizar a busca binária.
- * Ela deve retornar uma das seguintes opções:
- *  - cenário de inserção:
- *    -> caso a chave passada não esteja presente na lista:
+ * Complete a funÃ§Ã£o a seguir, capaz de realizar a busca binÃ¡ria.
+ * Ela deve retornar uma das seguintes opÃ§Ãµes:
+ *  - cenÃ¡rio de inserÃ§Ã£o:
+ *    -> caso a chave passada nÃ£o esteja presente na lista:
  *          --> retorna -1
- *  - cenário de não inserção:
+ *  - cenÃ¡rio de nÃ£o inserÃ§Ã£o:
  *    -> caso a chave passada esteja presente na lista:
- *          --> retorna o índice do elemento que contém a chave
+ *          --> retorna o Ã­ndice do elemento que contÃ©m a chave
  *
- * Sua função deve ter no máximo 8 ; (ponto e vírgula).
+ * Sua funÃ§Ã£o deve ter no mÃ¡ximo 8 ; (ponto e vÃ­rgula).
  */
 
 int busca_bin(no L[], int n, int x)
 {
-   int inf = 0, sup = n - 1;
-   while(inf <= sup){
+    int inf = 0, sup = n - 1; 
+    
+    while(inf <= sup){
         int meio = (int) (inf + sup) / 2;
         if(L[meio].chave == x){
             return meio;
@@ -69,8 +70,9 @@ int busca_bin(no L[], int n, int x)
         }else{
             inf = meio + 1;
         }
-   }
-   return -1;
+    }
+    
+    return -1;
 }
 
 int inserir(no L[], int n, int m, no d)
