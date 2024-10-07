@@ -1,5 +1,3 @@
-# Organizando os arquivos no makefile
-
 # Nome do projeto
 PROJ_NAME=tplab
 
