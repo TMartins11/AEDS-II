@@ -1,8 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "helloWorld.h"
+#include "hello.h"
 
 int main(){
-	helloWorld();
-	return (0);
+    hello();
+    
+    return 0;
 }

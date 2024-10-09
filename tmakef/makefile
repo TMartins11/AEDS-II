@@ -1,56 +1,26 @@
-# Organizando os arquivos no makefile
+PROJ_NAME=main
 
-# Nome do projeto
-PROJ_NAME=vasco
-
-# Arquivos .c
-C_SOURCE=$(wildcard ./source/*.c)
-
-# Arquivos .h
-H_SOURCE=$(wildcard ./source/*.h)
-
-# Arquivos objeto
-OBJ=$(subst .c,.o,$(subst source,objects,$(C_SOURCE)))
-
-# Compilador
 CC=gcc
 
-# Flags (opções) para o compilador
-CC_FLAGS=-c         \
-         -W         \
-         -Wextra    \
-         -ansi      \
-         -pedantic
+CC_FLAGS= -Wall -Wextra -g -O3
 
-# Comando utilizado como target do clean
-RM = rm -rf
+# Lista de arquivos .c
+C_SOURCE=$(wildcard ./source/*.c)
 
-#########################
-# Compilação e linkagem #
-#########################
-all: objFolder $(PROJ_NAME)
+# Substitui todos os arquivos .c do target especificado (C_SOURCE nesse caso) por .o, mesmo esquema de pathsubst, cria de novo e renomeia, sem perder o original.
+OBJ=$(C_SOURCE:.c=.o)
+
+# Define all como padrão para a execução do Target principal.
+all:$(PROJ_NAME)
 
 $(PROJ_NAME): $(OBJ)
-	@ echo 'Construindo o binário usando o linker GCC: $@'
-	$(CC) $^ -o $@
-	@ echo 'Binário pronto!: $@'
-	@ echo ' '
+	$(CC) $(CC_FLAGS) $^ -o $@
 
-./objects/%.o: ./source/%.c ./source/%.h
-	@ echo 'Construindo target usando o compilador GCC: $<'
-	$(CC) $< $(CC_FLAGS) -o $@
-	@ echo ' '
-
-./objects/main.o: ./source/main.c $(H_SOURCE)
-	@ echo 'Construindo target usando o compilador GCC: $<'
-	$(CC) $< $(CC_FLAGS) -o $@
-	@ echo ' '
-
-objFolder:
-	@ mkdir -p objects
+# Compila arquivos .c em .o e considera arquivos .h como dependências.
+./source/%.o: ./source/%.c  ./source/%.h
+	$(CC) $(CC_FLAGS) -c $< -o $@
 
 clean:
-	@ $(RM) ./objects/*.o $(PROJ_NAME) *~
-	@ rmdir objects
+	rm -rf $(PROJ_NAME) *.o
 
 .PHONY: all clean

@@ -1,20 +1,18 @@
-PROJ_NAME=avl
+PROJ_NAME=hello
 
 CC=gcc
 
-CC_FLAGS=-Wall -Wextra -g
+CC_FLAGS= -Wall -Wextra -g -O3
 
-TARGET=$(PROJ_NAME)
+all: $(PROJ_NAME)
 
-all: $(TARGET)
-
-avl: avl.o
+$(PROJ_NAME): hello.c
 	$(CC) $(CC_FLAGS) $^ -o $@
 
 %.o: %.c
-	$(CC) $(CC_FLAGS) -c $^ -o $@
+	$(CC) $(CC_FLAGS) $^ -o $@
 
 clean:
-	rm -rf $(TARGET) *.o
+	rm -rf $(PROJ_NAME) *.o
 
-.PHONY: all clean
+PHONY: all clean

@@ -5,7 +5,7 @@ PROJ_NAME=main
 CC=gcc
 
 # Compiller Flags
-CC_FLAGS=-Wall -O3 -Wextra -g
+CC_FLAGS=-Wall -O3 -g
 
 # Sets the main file as variable, making it easier if we want to alter it later on.
 TARGET=$(PROJ_NAME)
@@ -15,6 +15,8 @@ OBJ_DIR=objects
 
 # List of files that will have an objects corresponding file in the objects folder.
 OBJECTS= $(patsubst ./source/%.c, $(OBJ_DIR)/%.o, $(wildcard ./source/*.c))
+
+$(OBJECTS:.c=.o)
 
 # Specifies hello as the standart target for make.
 all: $(OBJ_DIR) $(TARGET)
