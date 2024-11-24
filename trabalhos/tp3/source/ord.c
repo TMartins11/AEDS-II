@@ -1,29 +1,49 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <string.h>
+#include <time.h>
 #include "ord.h"
 
+// Tamanho máximo de cada campo na struct.  
+#define MAX_STRING 100
+
+// Variáveis globais para contagem durante ordenação.
+unsigned long long comparacoes = 0;
+unsigned long long trocas = 0;
+
 // Função auxiliar para trocar duas posições de um vetor.
-void swap(int *xp, int *yp){
-    int tmp = *xp;
-    *xp = *yp;
-    *yp = tmp;
+void trocar(Jogador *a, Jogador *b){
+    Jogador tmp = *a;
+    *a = *b;
+    *b = tmp;
+    trocas++;
+}
+
+// Função auxiliar para comparar lexicamente duas strings, indicando a ordem alfabética entre elas.
+int comparar(const char *str1, const char *str2){
+    comparacoes++; // Incrementando o número de comparações.
+
+    // Verificando qual string é lexicamente maior que a outra.
+    while(*str1 && *str2){
+        if(*str1 != *str2){
+            return(*str1 - *str2);
+        }
+        // Iterando o ponteiro pra próxima letra das strings.
+        str1++;
+        str2++;
+    }
+
+    // Retornando o resultado. Que será utilizado para fazer as trocas nos algoritmos de ordenação.
+    return (*str1 - *str2);
 }
 
 // Algoritmo de ordenação simples BubbleSort implementado.
-void bubbleSort(int arr[], int n){
-    int i, j;
-    bool swapped;
-    for(i = 0; i < n-1; i++){
-        swapped = false;
-        for(j = 0; j < n - i - 1; j++){
-            if(arr[j] < arr[j+1]){
-                swap(&arr[j], &arr[j+1]);
-                swapped = true;
+void bubbleSort(Jogador *jogador, int n){
+    for(int i = 0; i < n - 1; i++){
+        for(int j = 0; j < n - i - 1; j++){
+            if(comparar(jogador[j].nome, jogador[j+1].nome) > 0){
+                trocar(&jogador[j], &jogador[j+1]);
             }
-        }
-        if(!swapped){
-            break;
         }
     }
 }
