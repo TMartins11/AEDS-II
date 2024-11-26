@@ -7,6 +7,10 @@
 #define MAX_PLAYERS 1149
 #define MAX_LINE_SIZE 256
 
+// Variáveis globais para armazenar o número de trocas e comparações durante a ordenação.
+extern unsigned long long int comparacoes;
+extern unsigned long long int trocas;
+
 // Struct para armazenar um jogador.
 typedef struct{
     char nome[MAX_STRING];

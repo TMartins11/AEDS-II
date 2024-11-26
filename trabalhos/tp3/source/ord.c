@@ -4,12 +4,9 @@
 #include <time.h>
 #include "ord.h"
 
-// Tamanho máximo de cada campo na struct.  
-#define MAX_STRING 100
-
-// Variáveis globais para contagem durante ordenação.
-unsigned long long comparacoes = 0;
-unsigned long long trocas = 0;
+// Definindo as variáveis globais inicializadas no arquivo .h
+long long unsigned int comparacoes = 0;
+long long int unsigned trocas = 0;
 
 // Função auxiliar para trocar duas posições de um vetor.
 void trocar(Jogador *a, Jogador *b){
