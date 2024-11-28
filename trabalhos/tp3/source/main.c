@@ -81,9 +81,11 @@ int main(int argc, char* argv[]){
             break;
         case 2:
             printf("\nO algoritmo escolhido foi MergeSort - Ordenação Ótima!\n");
+            mergeSortWrapper(jogadores,totalJogadores);
             break;
         case 3:
             printf("\nO algoritmo escolhido foi Counting Sort - Ordenação em Tempo Linear!\n");
+            countingSort(jogadores,totalJogadores);
             break;
         default:
             printf("\nVocê escolheu um algoritmo inválido!\n");
