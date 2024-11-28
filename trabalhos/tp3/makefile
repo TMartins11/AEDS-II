@@ -2,7 +2,7 @@ PROJ_NAME=tp3
 
 CC=gcc
 
-CFLAGS=-Wall -Wextra
+CFLAGS= -Wall -Wextra
  
 C_SOURCE=$(wildcard ./source/*.c)
 

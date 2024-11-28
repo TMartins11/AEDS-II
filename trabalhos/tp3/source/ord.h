@@ -25,7 +25,11 @@ int comparar(const char *str1, const char *str2); // Função auxiliar para comp
 
 void bubbleSort(Jogador *jogador, int n); // Algoritmo de ordenação BubbleSort - Ordenação simples.
 
-void merge(int arr[], int l, int m, int r); // Função recursiva que será usada no algoritmo MergeSort.
-void mergeSort(int arr[], int l, int r); // Algoritmo de ordenação MergeSort - Ordenação Ótima.
+void merge(Jogador *jogadores, int inicio, int meio, int fim); // Função recursiva que será usada no algoritmo MergeSort.
+void mergeSort(Jogador *jogadores, int inicio, int fim); // Algoritmo de ordenação MergeSort - Ordenação Ótima.
+void mergeSortWrapper(Jogador *jogadores, int totalJogadores) ; // Wrapper pro MergeSort reiniciar contadores.
+
+void countingSort(Jogador *jogadores, int totalJogadores); // Alogritmo de Ordenação CountingSort - Ordenação em Tempo Linear.
+
 
 #endif
