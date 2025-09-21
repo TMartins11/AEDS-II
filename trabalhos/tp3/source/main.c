@@ -3,8 +3,6 @@
 #include <time.h>
 #include "ord.h"
 
-/*TODO: Corrigir a implementação de MergeSort para os dados utilizados + Implementação de CountingSort*/
-
 /*
 ****************************************************DESCRIÇÃO DO PROJETO************************************************************ 
 Este código implementa três algoritmos de ordenação: 1) BubbleSort (ordenação simples), 2) MergeSort (ordenação ótima) e 
@@ -113,4 +111,5 @@ int main(int argc, char* argv[]){
     printf("\nMemória Total Utilizada: %.2fKB\n", (float) (totalJogadores * sizeof(Jogador)) / 1024);
     
     return 0;
+
 }
